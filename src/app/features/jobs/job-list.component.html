@@ -1,0 +1,24 @@
+<div class="job-list">
+    <div *ngFor="let job of paginatedJobs()">
+        <job-card [job]="job"></job-card>
+    </div>
+</div>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <button (click)="previousPage()" [disabled]="currentPage() === 1" class="pagination-button">Previous</button>
+  
+  <span>Page {{ currentPage() }} of {{ totalPages() }}</span>
+
+  <button (click)="nextPage()" [disabled]="currentPage() === totalPages()" class="pagination-button">Next</button>
+</div>
+
+<!-- Optional: Display page numbers -->
+<div class="pagination-numbers">
+  <button *ngFor="let page of [].constructor(totalPages()); let i = index"
+          (click)="goToPage(i + 1)" 
+          [class.active]="currentPage() === i + 1"
+          class="pagination-number">
+    {{ i + 1 }}
+  </button>
+</div>

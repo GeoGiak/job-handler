@@ -1,0 +1,67 @@
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Pagination Buttons */
+.pagination-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Pagination Numbers */
+.pagination-numbers {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.pagination-number {
+  padding: 10px 15px;
+  border: 1px solid #007bff;
+  border-radius: 50%;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s;
+
+}
+
+.pagination-number:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-number.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1);
+}
